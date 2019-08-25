@@ -6,11 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./exercice1.component.css']
 })
 export class Exercice1Component implements OnInit {
-  public compteur: number = 0; 
+
+  // Initialisation du compteur et du resultat
+  public compteurParent: number;
+  public resultat: number;
 
   constructor() { }
 
   ngOnInit() {
+    this.compteurParent = 99;
+    this.resultat = null;
   }
+
+  // A chaque mise à jour reçue du Component Enfant
+  miseAJourCompteur(event: any) {
+    this.resultat = event.value;
+  }
+
 
 }
